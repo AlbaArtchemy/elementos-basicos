@@ -1,40 +1,122 @@
-<!doctype html>
+<!--Todos los archivos html tienen que tener delante doctype.
+    Esta etiqueta sirve para decirle al navegador que el doc.
+    que estás viendo es un archivo html. 
+    ---No poner nombres a las cosas que se basen en algo accidental/circunstancial.
+    Buscar algo más general/función/otros factores de nomenlatura---
+    <> se abre una etiqueta
+    </> se cierra una etiqueta
+    TAMBIéN: <etiquetas que se autocierran/>
+    las etiquetas tienen nombres y pueden tener atributos y valores
+    los atributos son las palabras 
+    que van después del nombre de la etiqueta, pueden haber varios.
+    El orden de los atributos no afecta al resultado.
+    los valores van entre comillas. ejemplo: <body class= "crud"> -->
+<!--  -->
+        <!doctype html>
+<!--atributo: lang "es": idioma castellano  -->
 <html lang="es">
+    <!--información que da info al navegador sobre nuestra web.
+    Esto no va a aparecer en la pantalla.-->
     <head>
+        <!--meta:nombre-metainformación-más allá de la información
+        charset=: atributo, carácterest. Char-set (carácteres-dar valor)
+        utf8-carácternes latinos.-->
         <meta charset="utf-8">
+        <!--siempre tiene que haber esta linea para que la web sea responsive.
+            escalable en cualquier dipositivo-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="shortcut icon" href="https://www.youtube.com/s/desktop/12d6b690/img/favicon.ico">
-
+		<!-- link: enlace
+        rel=:indica que tiene que enlazar algo
+        "shortcut icon": enlace/favicon: icono
+        href="el atributo va a ser un enlace o lugar en nuestras carpetas" -->
+        <link rel="shortcut icon" href="https://www.youtube.com/s/desktop/12d6b690/img/favicon.ico">
+        <!--el título de la pestaña. Aquí esribimos las palabras que van a aparecer el google.
+        Según tus técnicas de seducción pos lo petarás más o menos con las palabras que uses.
+        Si no se te da bien esto, contrata a un SEO.
+        Tienes como límite 70 caracteres.  -->
 		<title>Título</title>
-		<meta name="description" content="descripción de la web, se recomienda 90 caracteres">
+        <!-- "description": aparece justo debajo de google
+         content="descripción de la web, se recomienda 160 caracteres"> -->
+        <meta name="description" content="descripción de la web, se recomienda 90 caracteres">
+        <!-- name="keywords": las palabras clave para tu web cuando alguien busque algo en google.
+        content="palabras clave, separadas, por comas">: -->
         <meta name="keywords" 	 content="palabras clave, separadas, por comas">
-
+        <!-- link href="style/normalize.css" rel="stylesheet": enlaza con archivos,
+            en este caso un archivo css, que es el estilo. Está vinculado con la hoja de estilo.
+            El archivo está en mis carpetas. "style/normalize.css"
+        <link href="style/main.css" rel="stylesheet"> -->
         <link href="style/normalize.css" rel="stylesheet">
+        <!--href=:
+        "style/main.css":  -->
         <link href="style/main.css" rel="stylesheet">
     </head>
-    
+    <!-- Todo lo que escribas en la carpeta body es lo que va a aparecer en la pantalla -->
     <body>
+        <!-- header:cabecera de la web, logo/menu/títulode la web. Es la primera caja.
+        Todo en web siempre va a air metido dentro de una caja (div=)
+        Dentro de header hay dos cajas: logo y div(caja con contenido).
+        header es igual a escribir (div id="header") -->
         <header>
+            <!-- div: también es una caja, de división
+            class=:sirve para poder identificar el div=, 
+            es decir, para darle nombre a las cosas, para ^cuando luego` le demos estilo
+            podamos refereirnos a ellas.-->
             <div class="logo">
+                <!--svg: dibujo vectorial/icono
+                viewbox=
+                "0 0 24 24":
+                Hay otra forma de darle nombre a las cosas: id=.
+                class= sirve para agrupar diferentes elementos/dar nombre a más de un elemento.
+                Nosotros lo utilizamos para todo a lo que queremos darle estilo
+                id= cuando me quiero referir a uno solo. Para todo aquello que vaya a interaccionar. 
+                servir para que algo suceda. Algo que vaya a tener una interacción concreta.
+                Un elemento puede tener class= y id=-->
                 <svg viewbox="0 0 24 24">
+                    <!-- path: es la parte del código que hay cuando copiamos un svg de internet.
+                        No vamos a tener que ponerlo porque viene con el código. -->
                     <path d="M18.36,2.64C20,2.64 21.36,4 21.36,5.64C21.36,7.29 20,8.64 18.36,8.64C16.71,8.64 15.36,7.29 15.36,5.64C15.36,5.34 15.41,5.06 15.5,4.8C14.43,4.29 13.25,4 12,4A8,8 0 0,0 4,12L4.04,12.84L2.05,13.05L2,12A10,10 0 0,1 12,2C13.69,2 15.28,2.42 16.67,3.16C17.16,2.83 17.74,2.64 18.36,2.64M18.36,4.64A1,1 0 0,0 17.36,5.64A1,1 0 0,0 18.36,6.64C18.92,6.64 19.36,6.19 19.36,5.64C19.36,5.08 18.92,4.64 18.36,4.64M5.64,15.36C7.29,15.36 8.64,16.71 8.64,18.36C8.64,18.66 8.59,18.94 8.5,19.2C9.57,19.71 10.75,20 12,20A8,8 0 0,0 20,12L19.96,11.16L21.95,10.95L22,12A10,10 0 0,1 12,22C10.31,22 8.72,21.58 7.33,20.84C6.84,21.17 6.26,21.36 5.64,21.36C4,21.36 2.64,20 2.64,18.36C2.64,16.71 4,15.36 5.64,15.36M5.64,17.36C5.08,17.36 4.64,17.81 4.64,18.36C4.64,18.92 5.08,19.36 5.64,19.36A1,1 0 0,0 6.64,18.36A1,1 0 0,0 5.64,17.36M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z" />
+                <!--cierre de svg/logo-->
                 </svg>
             </div>
 
             <div class="title">
+                <!--     
+               Esta jerarquía se utiliza para las cosas que queramos que sean más encontradas por orden:
+                <h1>  </h1> titulo de la página
+                <h2>  </h2> se utiliza para nombrar a las secciones/ categorías de producto
+                <h3>  </h3> se utiliza p.ej. para el nombre de los productos
+                <h4>  </h4> etc.  -->
                 <h1>Título</h1>
             </div>
         </header>
-
+        <!-- Parte central de la web, donde va la chicha.-->
         <main>
             <div class="subtitle">
                 <h2>Subtítulo</h2>
             </div>
-
+            <!-- CRUD: formulario y tabla. 
+                Ejercicio que va a ayudar a conectar con la base de datos.
+                C creo un dato
+                R leo un dato
+                U actualizar un dato 
+                D borro un dato
+            
+            Dentro de CRUD hay dos cajas: crud_table y crud_form-->
             <div class="crud">
                 <div class="crud__table">
+                    <!-- *Dentro de crud está table, dentro de table está grid, 
+                        dentro de grid está element, dentro de element hay imagenes.
+                    
+                    GRID Y FLEX: para distribuir las cajas, calcular los espacios entre ellas, etc.-->
                     <div class="crud__table-grid">
-                        <div class="crud__table-grid-element">
+                        <!-- entra en la carpeta imagenes y descarga una imagen que se llama 
+                            "image/1.jpg. 
+                            Todo lo que sean fotos será: webp/jpeg2000
+                            Iconos/logos/ilustraciones:SVG
+                            FOTOS: etiqueta img
+                            LGOS: svg
+                            alt= eel nombre de la imagen
+                            etiqueta para un formulario es form -->
                             <img src="images/1.jpg" alt="ardillas">
                         </div>
 
@@ -73,6 +155,7 @@
                         </div>
 
                         <div class="crud__table-flex-element">
+                            <!-- la etiqueta img no cierra con la barra. -->
                             <img src="images/5.jpg" alt="ardillas">
                         </div>
                     </div>
@@ -84,13 +167,16 @@
                             <div class="crud__form-label">
                                 <label for="name">Nombre</label>
                             </div>
-
+                         <!--input: meter datos
+                        cada input tiene un label. Van siempre juntas: la etiqueta de la caja
+                         y la caja.  -->
                             <div class="crud__form-input">
                                 <input type="text" name="name">
                             </div>
                         </div>
 
                         <div class="crud__form-element">
+                            <!-- Un button es un botón, no solamente para formularios -->
                             <button class="crud__store-button">Guardar</button>
                         </div>
                     </form>
@@ -100,19 +186,30 @@
 
         <footer>
             <div class="footer-element copyright">
+                <!-- P: paragrafo 
+                lista: <ul> dentro de cada ul hay un li <li> inicio </li>
+                                                        <li> quienes somos </li>
+                <video>
+             -->
                 <p>@2048</p>
             </div>
             <div class="footer-element author">
+                <!--    enlaces: los enlaces contienen letras o imagenes:
+                <a> se puede meter la a dentro o meter todo dentro de a.
+                    En este caso es para que pinche donde pinche enlace, no solo en el enlace. -->
                 <a href="https://thispersondoesnotexist.com/"><p>enlace a una web de verdad</p></a>
             </div>
         </footer>
-            
+        <!--Le digo donde se encuentra el archivo java script  -->
         <script src="js/main.js"></script>
-
+            <!-- Estoy cargando una librería que se encunetra en los servidores de google, 
+            con codigo ya hecho -->
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
         <script>
             WebFont.load({
                 google: {
+                    // la fuente tipográfica que tiene mi web.
+                    // los numeros indican el grosor 
                     families: ['Ubuntu:700,700i', 'Ubuntu+Condensed:400']
                 }
             });        
